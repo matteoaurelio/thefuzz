@@ -47,11 +47,16 @@ def check_empty_string(func):
         return func(*args, **kwargs)
     return decorator
 
-
 bad_chars = str("").join([chr(i) for i in range(128, 256)])  # ascii dammit!
+no_accents = ["a", "e", "i", "o", "u"]
+
 if PY3:
     translation_table = dict((ord(c), None) for c in bad_chars)
-    unicode = str
+    #For those vowels with accents, we unidecode them to keep them in the similarity ratio
+    for key in translation_table:
+        unidecoded_key = unidecode.unidecode(chr(key).lower())
+        if unidecoded_key in no_accents:
+            translation_table[key] = ord(unidecoded_key)
 
 
 def asciionly(s):
