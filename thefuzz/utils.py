@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 import sys
 import functools
-
+import unidecode
 from thefuzz.string_processing import StringProcessor
 
 
