@@ -24,7 +24,7 @@ setup(
     author_email='adam@seatgeek.com',
     packages=['thefuzz'],
     extras_require={'speedup': ['python-levenshtein>=0.12']},
-    url='https://github.com/seatgeek/thefuzz',
+    url='https://github.com/matteoaurelio/thefuzz',
     license="GPLv2",
     classifiers=[
         'Intended Audience :: Developers',
